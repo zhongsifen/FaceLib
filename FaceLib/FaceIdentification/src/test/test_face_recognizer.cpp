@@ -32,39 +32,6 @@
 #include<iostream>
 using namespace std;
 
-#ifdef _WIN32
-#pragma once
-#include <opencv2/core/version.hpp>
-
-#define CV_VERSION_ID CVAUX_STR(CV_MAJOR_VERSION) CVAUX_STR(CV_MINOR_VERSION) \
-  CVAUX_STR(CV_SUBMINOR_VERSION)
-
-#ifdef _DEBUG
-#define cvLIB(name) "opencv_" name CV_VERSION_ID "d"
-#else
-#define cvLIB(name) "opencv_" name CV_VERSION_ID
-#endif //_DEBUG
-
-#pragma comment( lib, cvLIB("core") )
-#pragma comment( lib, cvLIB("imgproc") )
-#pragma comment( lib, cvLIB("highgui") )
-
-#endif //_WIN32
-
-#if defined(__unix__) || defined(__APPLE__)
-
-#ifndef fopen_s
-
-#define fopen_s(pFile,filename,mode) ((*(pFile))=fopen((filename),(mode)))==NULL
-
-#endif //fopen_s
-
-#endif //__unix
-
-
-#include <opencv/cv.h>
-#include <opencv/highgui.h>
-
 #include "face_identification.h"
 #include "common.h"
 
@@ -82,19 +49,12 @@ using namespace std;
 
 using namespace seeta;
 
-#define TEST(major, minor) major##_##minor##_Tester()
-#define EXPECT_NE(a, b) if ((a) == (b)) std::cout << "ERROR: "
-#define EXPECT_EQ(a, b) if ((a) != (b)) std::cout << "ERROR: "
+#include "appSt.hpp"
 
-#ifdef _WIN32
-std::string DATA_DIR = "../../data/";
-std::string MODEL_DIR = "../../model/";
-#else
-std::string DATA_DIR = "./data/";
-std::string MODEL_DIR = "./model/";
-#endif
 void TEST(FaceRecognizerTest, CropFace) {
-  FaceIdentification face_recognizer((MODEL_DIR + "seeta_fr_v1.0.bin").c_str());
+  //FaceIdentification face_recognizer((MODEL_DIR + "seeta_fr_v1.0.bin").c_str());
+  FaceIdentification face_recognizer;
+  //face_recognizer.LoadModel((MODEL_DIR + "seeta_fr_v1.0.bin").c_str());
   std::string test_dir = DATA_DIR + "test_face_recognizer/";
   /* data initialize */
   std::ifstream ifs;

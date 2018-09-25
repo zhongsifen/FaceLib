@@ -69,7 +69,7 @@ class FaceDetection::Impl {
   seeta::fd::ImagePyramid img_pyramid_;
 };
 
-FaceDetection::FaceDetection(const char* model_path)
+FaceDetection::FaceDetection(std::string model_path)
     : impl_(new seeta::FaceDetection::Impl()) {
   impl_->detector_->LoadModel(model_path);
 }

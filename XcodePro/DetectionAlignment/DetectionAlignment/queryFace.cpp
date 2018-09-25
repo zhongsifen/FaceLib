@@ -4,8 +4,8 @@
 #include "face_detection.h"
 #include "face_alignment.h"
 
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -26,6 +26,9 @@
 
 using namespace seeta;
 using namespace std;
+
+const std::string _M("/Users/zhongsifen/Work/SeetaFaceModel/");
+const std::string _D("/Users/zhongsifen/Work/SeetaFaceData/");
 
 void saveFeaturesFilePair(std::pair<vector<string>, vector<vector<float> >>  &features, string &filename){
     ofstream out(filename.c_str());
@@ -100,7 +103,7 @@ std::string base_name(std::string const & path)
 int main(int argc, char* argv[]) {
     
     // Initialize face detection model
-    seeta::FaceDetection detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fd_frontal_v1.0.bin");
+    seeta::FaceDetection detector(_M + "seeta_fd_frontal_v1.0.bin");
     detector.SetMinFaceSize(20);
     detector.SetScoreThresh(2.f);
     detector.SetImagePyramidScaleFactor(0.8f);
@@ -109,13 +112,13 @@ int main(int argc, char* argv[]) {
     std::pair<vector<string>, vector<vector<float> >>  namesFeats;
     
     // Initialize face alignment model and face Identification model
-    seeta::FaceAlignment point_detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fa_v1.1.bin");
-    FaceIdentification face_recognizer("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fr_v1.0.bin");
+    seeta::FaceAlignment point_detector(_M + "seeta_fa_v1.1.bin");
+    FaceIdentification face_recognizer(_M + "seeta_fr_v1.0.bin");
     
     cv::Mat dst_img(face_recognizer.crop_height(), face_recognizer.crop_width(), CV_8UC(face_recognizer.crop_channels()));
     
     // Save Cropped faces
-    string path_imgCroppedNames = "/Users/willard/Pictures/SeetaFaces/";
+    string path_imgCroppedNames = _D + "crop";
     
     // Load image names and features
     string filenamePair = "namesFeats.bin";
@@ -123,7 +126,7 @@ int main(int argc, char* argv[]) {
 
     // Extract query face image feature
     float queryFeat[2048];
-    cv::Mat queryImg_color = cv::imread("/Users/willard/Pictures/SeetaFaces/NF_200001_001.jpg");
+    cv::Mat queryImg_color = cv::imread(_D + "test_face_recognizer/images/src/NF_200001_001.jpg");
     extractFeat(detector, point_detector, face_recognizer, queryImg_color, dst_img, queryFeat);
     
     // Calculate cosine distance between query and data base faces

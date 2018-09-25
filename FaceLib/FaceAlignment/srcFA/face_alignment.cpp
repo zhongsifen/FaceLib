@@ -45,11 +45,9 @@ namespace seeta {
    *  @param model_path Path of the model file, either absolute or relative to
    *  the working directory.
    */
-  FaceAlignment::FaceAlignment(const char * model_path){
+  FaceAlignment::FaceAlignment(std::string model_path){
     facial_detector = new CCFAN();
-    if (model_path == NULL)
-      model_path = "seeta_fa_v1.0.bin";
-    facial_detector->InitModel(model_path);
+	  facial_detector->InitModel(model_path.c_str());
   }
 
   /** Detect five facial landmarks, i.e., two eye centers, nose tip and two mouth corners.

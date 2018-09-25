@@ -46,7 +46,7 @@ namespace fd {
 class MLPLayer {
  public:
   explicit MLPLayer(int32_t act_func_type = 1)
-      : input_dim_(0), output_dim_(0), act_func_type_(act_func_type) {}
+      : act_func_type_(act_func_type), input_dim_(0), output_dim_(0) {}
   ~MLPLayer() {}
 
   void Compute(const float* input, float* output);

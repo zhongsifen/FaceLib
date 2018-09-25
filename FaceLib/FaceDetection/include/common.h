@@ -3,19 +3,19 @@
  * This file is part of the open-source SeetaFace engine, which includes three modules:
  * SeetaFace Detection, SeetaFace Alignment, and SeetaFace Identification.
  *
- * This file is part of the SeetaFace Alignment module, containing codes implementing the
- * facial landmarks location method described in the following paper:
+ * This file is part of the SeetaFace Detection module, containing codes implementing the
+ * face detection method described in the following paper:
  *
  *
- *   Coarse-to-Fine Auto-Encoder Networks (CFAN) for Real-Time Face Alignment, 
- *   Jie Zhang, Shiguang Shan, Meina Kan, Xilin Chen. In Proceeding of the
- *   European Conference on Computer Vision (ECCV), 2014
+ *   Funnel-structured cascade for multi-view face detection with alignment awareness,
+ *   Shuzhe Wu, Meina Kan, Zhenliang He, Shiguang Shan, Xilin Chen.
+ *   In Neurocomputing (under review)
  *
  *
  * Copyright (C) 2016, Visual Information Processing and Learning (VIPL) group,
  * Institute of Computing Technology, Chinese Academy of Sciences, Beijing, China.
  *
- * The codes are mainly developed by Jie Zhang (a Ph.D supervised by Prof. Shiguang Shan)
+ * The codes are mainly developed by Shuzhe Wu (a Ph.D supervised by Prof. Shiguang Shan)
  *
  * As an open-source face recognition engine: you can redistribute SeetaFace source codes
  * and/or modify it under the terms of the BSD 2-Clause License.
@@ -33,17 +33,6 @@
 #define SEETA_COMMON_H_
 
 #include <cstdint>
-
-#if defined _WIN32
-#ifdef SEETA_EXPORTS
-#define SEETA_API __declspec(dllexport)
-#else
-#define SEETA_API __declspec(dllimport)
-#endif
-
-#else
-#define SEETA_API
-#endif
 
 #define DISABLE_COPY_AND_ASSIGN(classname) \
  private: \
@@ -75,16 +64,16 @@ namespace seeta {
     }
 
     uint8_t* data;
-    int width;
-    int height;
-    int num_channels;
+    int32_t width;
+    int32_t height;
+    int32_t num_channels;
   } ImageData;
 
   typedef struct Rect {
-    int x;
-    int y;
-    int width;
-    int height;
+    int32_t x;
+    int32_t y;
+    int32_t width;
+    int32_t height;
   } Rect;
 
   typedef struct FaceInfo {
@@ -97,12 +86,10 @@ namespace seeta {
     double score; /**< Larger score should mean higher confidence. */
   } FaceInfo;
 
-  typedef struct FacialLandmark{
+  typedef struct {
     double x;
     double y;
   } FacialLandmark;
-    
 }  // namespace seeta
 
 #endif  // SEETA_COMMON_H_
-

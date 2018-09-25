@@ -41,7 +41,7 @@ namespace seeta {
 
 class FaceDetection {
  public:
-  explicit FaceDetection(const char* model_path);
+  explicit FaceDetection(std::string model_path);
   ~FaceDetection();
 
   /**
