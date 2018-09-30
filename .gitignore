@@ -1,5 +1,8 @@
 XcodePro/DetectionAlignment/DetectionAlignment.xcodeproj/
 
+# Visual Studio
+.vs
+
 # Compiled Object files
 *.slo
 *.lo
