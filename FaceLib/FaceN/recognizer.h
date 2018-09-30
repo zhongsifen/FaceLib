@@ -76,7 +76,7 @@ public:
     CHECK_EQ(fread(&crop_channels_, sizeof(int), 1, file), 1); 
     CHECK_EQ(fread(&crop_height_, sizeof(int), 1, file), 1);
     CHECK_EQ(fread(&crop_width_, sizeof(int), 1, file), 1);
-	  CHECK_EQ(fread(&feat_size_, sizeof(int), 1, file), 1);
+    CHECK_EQ(fread(&feat_size_, sizeof(int), 1, file), 1);
     /*if (!aligner_ || crop_height_ != aligner_->CropHeight() 
 		||  crop_width_ != aligner_->CropHeight())*/
     aligner_.reset(new Aligner(crop_height_, crop_width_, "linear"));

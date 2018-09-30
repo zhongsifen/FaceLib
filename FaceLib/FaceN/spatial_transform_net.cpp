@@ -141,8 +141,8 @@ double SpatialTransformNet::Sampling(const float* const feat_map, int H, int W,
       double kernel_width =  std::max(8.0, 4.0 / scale); // bicubic kernel width
       std::vector<double> weights_x, weights_y; 
       std::vector<int>  indices_x, indices_y;
-		weights_x.reserve(5); indices_x.reserve(5);
-		weights_y.reserve(5); indices_y.reserve(5);
+      weights_x.reserve(5); indices_x.reserve(5);
+      weights_y.reserve(5); indices_y.reserve(5);
       // get indices and weight along x axis
       for (int ux = ceil(x - kernel_width / 2); 
           ux <= floor(x + kernel_width / 2); ++ ux) {
@@ -200,8 +200,8 @@ double SpatialTransformNet::Sampling(const unsigned char* const feat_map,
       double kernel_width = std::max(8.0, 4.0 / scale); // bicubic kernel width
       std::vector<double> weights_x, weights_y;
       std::vector<int>  indices_x, indices_y;
-		weights_x.reserve(5); indices_x.reserve(5);
-		weights_y.reserve(5); indices_y.reserve(5);
+      weights_x.reserve(5); indices_x.reserve(5);
+      weights_y.reserve(5); indices_y.reserve(5);
       // get indices and weight along x axis
       for (int ux = ceil(x - kernel_width / 2);
         ux <= floor(x + kernel_width / 2); ++ux) {
