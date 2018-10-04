@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceLib", "FaceLib\FaceLib.vcxproj", "{B3F1C832-2B57-4FA2-A864-41DA86859BB5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceD", "FaceD\FaceD.vcxproj", "{DE19D6AE-496C-432A-AF46-5787303DD46F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Debug|x64.ActiveCfg = Debug|x64
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Debug|x64.Build.0 = Debug|x64
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Debug|x86.ActiveCfg = Debug|x64
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Release|x64.ActiveCfg = Release|x64
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Release|x64.Build.0 = Release|x64
+		{B3F1C832-2B57-4FA2-A864-41DA86859BB5}.Release|x86.ActiveCfg = Release|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Debug|x64.ActiveCfg = Debug|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Debug|x64.Build.0 = Debug|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Debug|x86.ActiveCfg = Debug|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Release|x64.ActiveCfg = Release|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Release|x64.Build.0 = Release|x64
+		{DE19D6AE-496C-432A-AF46-5787303DD46F}.Release|x86.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {472D9883-B312-4E5B-9305-3A98C8C56D51}
+	EndGlobalSection
+EndGlobal
