@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../FaceI"
+      name = "FaceI">
+      <FileRef
+         location = "group:aligner.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:math_functions.h">
+      </FileRef>
+      <FileRef
+         location = "group:net_factory.h">
+      </FileRef>
+      <FileRef
+         location = "group:log.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:CMakeLists.txt">
+      </FileRef>
+      <FileRef
+         location = "group:bn_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:net.h">
+      </FileRef>
+      <FileRef
+         location = "group:face_identification.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:recognizer.h">
+      </FileRef>
+      <FileRef
+         location = "group:conv_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:face_identification.h">
+      </FileRef>
+      <FileRef
+         location = "group:common_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:blob.h">
+      </FileRef>
+      <FileRef
+         location = "group:blob.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:tform_maker_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:common_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:conv_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:pad_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:math_functions.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:spatial_transform_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:pad_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:spatial_transform_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:common.h">
+      </FileRef>
+      <FileRef
+         location = "group:bias_adder_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:log.h">
+      </FileRef>
+      <FileRef
+         location = "group:tform_maker_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:viplnet.h">
+      </FileRef>
+      <FileRef
+         location = "group:inner_product_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:inner_product_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:eltwise_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:bias_adder_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:max_pooling_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:aligner.h">
+      </FileRef>
+      <FileRef
+         location = "group:hyper_param.h">
+      </FileRef>
+      <FileRef
+         location = "group:max_pooling_net.h">
+      </FileRef>
+      <FileRef
+         location = "group:eltwise_net.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:bn_net.cpp">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>

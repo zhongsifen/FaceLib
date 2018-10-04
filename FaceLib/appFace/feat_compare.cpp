@@ -61,9 +61,7 @@ CVAUX_STR(CV_SUBMINOR_VERSION)
 
 #endif //__unix
 
-
-#include <opencv/cv.h>
-#include <opencv/highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include "face_identification.h"
 #include "common.h"
@@ -280,7 +278,7 @@ void TEST(FaceRecognizerTest, ExtractFeatureWithCrop) {
     delete []feat_sdk;
 }
 
-int main(int argc, char* argv[]) {
+int main_compare(int argc, char* argv[]) {
     TEST(FaceRecognizerTest, CropFace);
     TEST(FaceRecognizerTest, ExtractFeature);
     TEST(FaceRecognizerTest, ExtractFeatureWithCrop);

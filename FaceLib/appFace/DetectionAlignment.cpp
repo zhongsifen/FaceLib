@@ -38,23 +38,19 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
-#include "face_detection.h"
-#include "face_alignment.h"
+#include "FaceLib/FaceLib.hpp"
 
-int main(int argc, char** argv) {
-    seeta::FaceDetection detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fd_frontal_v1.0.bin");
-    
+int main_DetAli(int argc, char* argv[]) {
+	FaceLib facelib;
+	
     // Detector setting
-    detector.SetMinFaceSize(40);
-    detector.SetScoreThresh(2.f);
-    detector.SetImagePyramidScaleFactor(0.8f);
-    detector.SetWindowStep(4, 4);
+    facelib.det->SetMinFaceSize(40);
+    facelib.det->SetScoreThresh(2.f);
+    facelib.det->SetImagePyramidScaleFactor(0.8f);
+    facelib.det->SetWindowStep(4, 4);
     
     int pts_num = 5;
-    
-    // Initialize face alignment model
-    seeta::FaceAlignment point_detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fa_v1.1.bin");
-    
+	
     // open camera
     cv::VideoCapture cap(0);
     if(!cap.isOpened()){
@@ -87,7 +83,7 @@ int main(int argc, char** argv) {
         img_data.height = img_gray.rows;
         img_data.num_channels = 1;
         
-        std::vector<seeta::FaceInfo> faces = detector.Detect(img_data);
+        std::vector<seeta::FaceInfo> faces = facelib.det->Detect(img_data);
         int32_t num_face = static_cast<int32_t>(faces.size());
         
         if (num_face == 0)
@@ -95,7 +91,7 @@ int main(int argc, char** argv) {
         
         // Detect landmarks
         seeta::FacialLandmark points[5];
-        point_detector.PointDetectLandmarks(img_data, faces[0], points);
+        facelib.ali->PointDetectLandmarks(img_data, faces[0], points);
         
         // Visualize the results
         cv::rectangle(img, cv::Point(faces[0].bbox.x, faces[0].bbox.y), cv::Point(faces[0].bbox.x + faces[0].bbox.width - 1, faces[0].bbox.y + faces[0].bbox.height - 1), CV_RGB(255, 0, 0), 2);

@@ -98,7 +98,7 @@ std::string base_name(std::string const & path)
 }
 
 
-int main(int argc, char* argv[]) {
+int main_extract(int argc, char* argv[]) {
     
     // Initialize face detection model
     seeta::FaceDetection detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fd_frontal_v1.0.bin");

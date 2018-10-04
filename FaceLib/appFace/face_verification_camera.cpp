@@ -55,7 +55,7 @@ using namespace seeta;
 #define EXPECT_EQ(a, b) if ((a) != (b)) std::cout << "ERROR: "
 
 
-int main(int argc, char* argv[]) {
+int main_verify_cam(int argc, char* argv[]) {
     // Initialize face detection model
     seeta::FaceDetection detector("/Users/willard/codes/cpp/face/SeetaFaceLib/model/seeta_fd_frontal_v1.0.bin");
     detector.SetMinFaceSize(20);
